@@ -1,43 +1,37 @@
-// Import necessary modules
+// server.js
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const dotenv = require('dotenv');
+const cors = require('cors');
 
-// Load environment variables from .env file
-dotenv.config();
-
-// Create an Express application
 const app = express();
 
-// Middleware to parse JSON requests
+// Middleware
+app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB connection
-const dbURI = process.env.MONGODB_URI; // Ensure you have this in your .env file
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error('MongoDB connection error:', err));
 
-mongoose.connect(dbURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-.then(() => console.log('MongoDB connected successfully'))
-.catch(err => console.error('MongoDB connection error:', err));
+// User registration route (POST)
+app.post('/api/auth/register', (req, res) => {
+    const { username, email } = req.body;
 
-// Sample route for user registration
-app.post('/api/auth/register', async (req, res) => {
-    try {
-        const { username, email } = req.body;
-        // Here you would normally save the user to the database
-        // For demonstration, we'll just return a success message
-        res.status(201).json({ message: 'User registered successfully', user: { username, email } });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Server error' });
-    }
+    // Replace this with your user registration logic (e.g., save user to the database)
+    console.log(`User Registered: Username: ${username}, Email: ${email}`);
+    res.json({ message: 'User registered successfully' });
+});
+
+// Optional: User registration info route (GET)
+app.get('/api/auth/register', (req, res) => {
+    res.send('Registration endpoint. Use POST to register a user.');
 });
 
 // Start the server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000; // Use environment variable for the port or default to 5000
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
