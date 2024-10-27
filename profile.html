@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Customization</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Customize Your Profile</h1>
+        <form id="customize-profile" action="/api/auth/customize" method="POST" enctype="multipart/form-data">
+            <label for="profile-picture">Profile Picture:</label>
+            <input type="file" id="profile-picture" name="profilePicture" required>
+            
+            <label for="name">Display Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="banner">Banner:</label>
+            <input type="file" id="banner" name="banner">
+            
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

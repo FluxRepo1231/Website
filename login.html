@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In / Register</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Log In or Register</h1>
+        
+        <div id="login-form">
+            <h2>Login</h2>
+            <form id="login" action="/api/auth/login" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+
+        <div id="register-form">
+            <h2>Register</h2>
+            <form id="register" action="/api/auth/register" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        
+        <p>Already have an account? <a href="#" id="toggle-to-login">Log In</a></p>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
