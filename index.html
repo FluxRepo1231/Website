@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VoidWalker - Secure Your Discord Experience</title>
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -17,6 +18,7 @@
             <ul>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#commands">Commands</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="#invite" id="invite-btn">Invite</a></li>
             </ul>
         </nav>
@@ -52,22 +54,35 @@
         <h2>Popular Commands</h2>
         <div class="command-list">
             <div class="command">
-                <h3>SOON</h3>
-                <p>SOON</p>
+                <h3>!ban</h3>
+                <p>Instantly remove troublemakers from your server.</p>
             </div>
             <div class="command">
-                <h3>SOON</h3>
-                <p>SOON</p>
+                <h3>!mute</h3>
+                <p>Temporarily silence disruptive users.</p>
             </div>
             <div class="command">
-                <h3>SOON</h3>
-                <p>SOON</p>
+                <h3>!lockdown</h3>
+                <p>Secure your server in emergencies with one command.</p>
             </div>
             <div class="command">
-                <h3>SOON</h3>
-                <p>SOON</p>
+                <h3>!config</h3>
+                <p>Customize VoidWalker to fit your server's unique needs.</p>
             </div>
         </div>
+        <a href="#" class="see-more">See all commands</a>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form" onsubmit="handleSubmit(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </section>
     <footer>
         <div class="footer-content">
