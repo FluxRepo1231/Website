@@ -176,6 +176,45 @@ nav ul li a:hover {
     color: #f39c12;
 }
 
+.command-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.command {
+    flex-basis: calc(33.333% - 2rem);
+    text-align: center;
+    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out;
+}
+
+.command:hover {
+    transform: scale(1.05);
+}
+
+.command i {
+    font-size: 3rem;
+    color: #f39c12;
+    margin-bottom: 1rem;
+}
+
+.command h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #ecf0f1;
+}
+
+.command p {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
 /* Contact section */
 #contact {
     padding: 4rem 2rem;
@@ -306,7 +345,7 @@ footer p {
         margin-bottom: 2rem;
     }
 
-    .feature {
+    .feature, .command {
         flex-basis: 100%;
     }
 }
